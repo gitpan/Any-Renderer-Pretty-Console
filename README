@@ -1,0 +1,53 @@
+NAME
+    Any::Renderer::Pretty::Console - Render data structures through
+    Data::Format::Pretty::Console
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use Any::Renderer;
+
+     my %options = (table_column_orders => [[qw/a b/]]);
+     my $format  = "Pretty::Console";
+     my $r = Any::Renderer->new($format, \%options);
+
+     my $data_structure = [...]; # arbitrary structure
+     my $string = $r->render($data_structure);
+
+DESCRIPTION
+    Any::Renderer::Pretty::Console renders any Perl data structure passed to
+    it with Data::Format::Pretty::Console. For example:
+
+METHODS
+  new($format, \%options)
+    $format must be "Pretty::Console". See "OPTIONS" for valid \%options.
+
+  $r->render($data_structure) => STRING
+  FUNCTIONS
+    None is exported.
+
+  requires_template($format) => BOOL
+    Will return false.
+
+  available_formats() => ARRAYREF
+    Will return ['Pretty::Console'].
+
+    The main method.
+
+OPTIONS
+    Options are format_pretty() options. See Data::Format::Pretty::Console
+    for available options.
+
+SEE ALSO
+    Data::Format::Pretty::Console
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2011 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
